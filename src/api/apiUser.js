@@ -5,8 +5,9 @@ import axios from "axios";
 export const url = 'http://147.45.237.114:8080';
 
 export const CreateUser = async (body) => {
-    debugger;
-    const response = await axios({method: 'post', url: `${url}/registraition`, body: {
+    //debugger;
+    console.log("ууииииииии")
+    const response = await axios({method: 'post', url: `${url}/registraition`, data: {
         "email": body.email,
         "password": body.password,
         "role": body.role
@@ -14,6 +15,7 @@ export const CreateUser = async (body) => {
     const data = response.data;
 
     console.log(data)
+    console.log("ааууууууууу")
 
     return response ? {
         Email: data.email,

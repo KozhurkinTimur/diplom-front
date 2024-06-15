@@ -10,12 +10,13 @@ const Auth = () => {
 
 
     const createUser = () => {
+        console.log("начало функции")
 
-        debugger
+       // debugger
 
-        if (document.getElementById('email') !== null) {
-            return
-        }
+        // if (document.getElementById('email') !== null) {
+        //     return
+        // }
 
         const data = {
             email: email,
@@ -26,19 +27,25 @@ const Auth = () => {
         console.log(data)
             
         const resp = CreateUser(data)
+        console.log("алллоооооо")
 
         if (resp == null) {
+            console.log("умер")
             alert("Что-то неправильно")            
             return
         }
 
-        if (!store.getIsAuth) {
+        console.log("начало функции 2")
+
+
+        // if (!store.getIsAuth) {
             store.setIsAuth(true)
-        }
+        // }
 
         if (resp.Role !== store.getIsAdmin) {
             store.setIsAdmin(resp.Role)
         }
+        console.log("начало функции 3")
 
         navigate('/courses')
     }
